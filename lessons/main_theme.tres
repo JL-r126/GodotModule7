@@ -1,4 +1,84 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dff5vdo8oyrxt"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dff5vdo8oyrxt"]
+
+[ext_resource type="StyleBox" uid="uid://bsetnjcvpimr4" path="res://new_style_box_flat.tres" id="1_ei3wx"]
+[ext_resource type="FontFile" uid="uid://neiustlwucdv" path="res://edundot.ttf" id="1_ulena"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ei3wx"]
+content_margin_left = 22.0
+content_margin_top = 15.0
+content_margin_right = 22.0
+content_margin_bottom = 18.0
+bg_color = Color(0.12941177, 0.44705883, 0.44313726, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+shadow_size = 80
+shadow_offset = Vector2(9, 9)
+anti_aliasing_size = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulena"]
+content_margin_left = 22.0
+content_margin_top = 15.0
+content_margin_right = 22.0
+content_margin_bottom = 18.0
+bg_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aaryr"]
+content_margin_left = 22.0
+content_margin_top = 15.0
+content_margin_right = 22.0
+content_margin_bottom = 18.0
+bg_color = Color(0.18000486, 0.1800049, 0.18000478, 1)
+skew = Vector2(0.5, 0.1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_size = 5
+anti_aliasing_size = 10.0
+
+[sub_resource type="Image" id="Image_aaryr"]
+data = {
+"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
+"format": "RGBA8",
+"height": 2,
+"mipmaps": false,
+"width": 2
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_jktrv"]
+image = SubResource("Image_aaryr")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1362"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4fo1"]
 content_margin_left = 48.0
@@ -12,6 +92,39 @@ corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
 [resource]
+default_font = ExtResource("1_ulena")
 default_font_size = 48
+Button/fonts/font = ExtResource("1_ulena")
+Button/styles/disabled = SubResource("StyleBoxFlat_ei3wx")
+Button/styles/focus = SubResource("StyleBoxFlat_ulena")
+Button/styles/hover = SubResource("StyleBoxFlat_ulena")
+Button/styles/normal = ExtResource("1_ei3wx")
+Button/styles/pressed = SubResource("StyleBoxFlat_aaryr")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_selected_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/selection_color = Color(0.1, 0.1, 1, 0.8)
+RichTextLabel/colors/table_border = Color(0, 0, 0, 0)
+RichTextLabel/colors/table_even_row_bg = Color(0, 0, 0, 0)
+RichTextLabel/colors/table_odd_row_bg = Color(0, 0, 0, 0)
+RichTextLabel/constants/line_separation = 0
+RichTextLabel/constants/outline_size = 0
+RichTextLabel/constants/paragraph_separation = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/shadow_outline_size = 1
+RichTextLabel/constants/strikethrough_alpha = 50
+RichTextLabel/constants/table_h_separation = 3
+RichTextLabel/constants/table_v_separation = 3
+RichTextLabel/constants/text_highlight_h_padding = 3
+RichTextLabel/constants/text_highlight_v_padding = 3
+RichTextLabel/constants/underline_alpha = 50
+RichTextLabel/fonts/bold_font = ExtResource("1_ulena")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_ulena")
+RichTextLabel/fonts/italics_font = ExtResource("1_ulena")
+RichTextLabel/fonts/mono_font = ExtResource("1_ulena")
+RichTextLabel/fonts/normal_font = ExtResource("1_ulena")
+RichTextLabel/icons/horizontal_rule = SubResource("ImageTexture_jktrv")
+RichTextLabel/styles/focus = SubResource("StyleBoxFlat_f1362")
 RichTextLabel/styles/normal = SubResource("StyleBoxFlat_a4fo1")
