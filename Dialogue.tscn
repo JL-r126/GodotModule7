@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://e5ycpsjrg0jl"]
+[gd_scene load_steps=9 format=3 uid="uid://e5ycpsjrg0jl"]
 
 [ext_resource type="Shader" uid="uid://cs15e2hgd2lan" path="res://assets/sliding_background.gdshader" id="1_62e2m"]
 [ext_resource type="Theme" uid="uid://dff5vdo8oyrxt" path="res://lessons/main_theme.tres" id="1_kbped"]
+[ext_resource type="Script" uid="uid://cq2o44y8uaxpm" path="res://Dialogue.gd" id="2_fj5cn"]
 [ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="2_qtu10"]
 [ext_resource type="Texture2D" uid="uid://copkt78vgp37i" path="res://assets/sophia.png" id="3_qtu10"]
 [ext_resource type="Texture2D" uid="uid://d000xjtr4iqtk" path="res://assets/emotion_regular.png" id="4_ee4bf"]
+[ext_resource type="AudioStream" uid="uid://bafjgt7eu3x5a" path="res://assets/talking_synth.ogg" id="7_iy58a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ee4bf"]
 shader = ExtResource("1_62e2m")
@@ -13,7 +15,7 @@ shader_parameter/bg_color = Color(0.98039216, 0.9490196, 0.7254902, 1)
 shader_parameter/pattern_color = Color(0.99607843, 0.8784314, 0.5647059, 1)
 shader_parameter/pattern_size = 256.0
 
-[node name="dialogue" type="Control"]
+[node name="Dialogue" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_kbped")
+script = ExtResource("2_fj5cn")
 
 [node name="background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ee4bf")
@@ -75,6 +78,7 @@ text = "Hello World!"
 fit_content = true
 
 [node name="nextButton" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -89,3 +93,23 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "next
 "
+
+[node name="previousButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -428.0
+offset_top = -93.0
+offset_right = -177.0
+offset_bottom = -9.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "previous"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_iy58a")

@@ -23,7 +23,12 @@ var appearance_time := 10.0
 
 func _ready() -> void:
 	rich_text_label.text = lines
-	# Set the text's `visible_ratio` back to `0`
-	# Make sure you animate the `visible_ratio` over `appearance_time`
-	# Start playing the sound
-	# And also remember to stop it!
+	var current_item := lines
+	rich_text_label.text = current_item
+	rich_text_label.visible_ratio = 0.0
+	var tween := create_tween()
+	tween.tween_property(rich_text_label, "visible_ratio", 1.0, appearance_time)
+	var sound_max_offset := audio_stream_player.stream.get_length() - appearance_time
+	var sound_start_position := randf() * sound_max_offset
+	audio_stream_player.play(sound_start_position)
+	tween.finished.connect(audio_stream_player.stop)

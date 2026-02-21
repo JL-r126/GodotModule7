@@ -47,7 +47,7 @@ corner_radius_bottom_left = 40
 shadow_size = 5
 anti_aliasing_size = 10.0
 
-[sub_resource type="Image" id="Image_aaryr"]
+[sub_resource type="Image" id="Image_ulena"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
 "format": "RGBA8",
@@ -57,7 +57,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_jktrv"]
-image = SubResource("Image_aaryr")
+image = SubResource("Image_ulena")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1362"]
 content_margin_left = 4.0
@@ -100,6 +100,7 @@ Button/styles/focus = SubResource("StyleBoxFlat_ulena")
 Button/styles/hover = SubResource("StyleBoxFlat_ulena")
 Button/styles/normal = ExtResource("1_ei3wx")
 Button/styles/pressed = SubResource("StyleBoxFlat_aaryr")
+HBoxContainer/constants/separation = 12
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/font_selected_color = Color(0, 0, 0, 0)
@@ -128,3 +129,4 @@ RichTextLabel/fonts/normal_font = ExtResource("1_ulena")
 RichTextLabel/icons/horizontal_rule = SubResource("ImageTexture_jktrv")
 RichTextLabel/styles/focus = SubResource("StyleBoxFlat_f1362")
 RichTextLabel/styles/normal = SubResource("StyleBoxFlat_a4fo1")
+VBoxContainer/constants/separation = 12

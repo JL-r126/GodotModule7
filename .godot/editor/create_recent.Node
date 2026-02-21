@@ -1,6 +1,10 @@
+ColorPickerButton
+Button
+HBoxContainer
+VBoxContainer
+AudioStreamPlayer
 RichTextLabel
 AcceptDialog
-Button
 TextureRect
 ColorRect
 AnimationPlayer
