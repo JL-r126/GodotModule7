@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://buuvmd4loey7c"]
+[gd_scene load_steps=15 format=3 uid="uid://buuvmd4loey7c"]
 
 [ext_resource type="Theme" uid="uid://dff5vdo8oyrxt" path="res://lessons/main_theme.tres" id="1_2ose3"]
 [ext_resource type="Script" uid="uid://dntaj8kgiqs0e" path="res://expressions.gd" id="2_0360b"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="4_ofruo"]
 [ext_resource type="Texture2D" uid="uid://copkt78vgp37i" path="res://assets/sophia.png" id="5_mgwxf"]
 [ext_resource type="Texture2D" uid="uid://d000xjtr4iqtk" path="res://assets/emotion_regular.png" id="6_d0dyi"]
+[ext_resource type="Texture2D" uid="uid://vb24hfgkeyti" path="res://assets/pink.png" id="7_2ose3"]
+[ext_resource type="Script" uid="uid://yndr5q6s1bha" path="res://character.gd" id="7_yxgko"]
+[ext_resource type="Script" uid="uid://c3prebtw4dyph" path="res://rigid_body_2d.gd" id="9_3lcr7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ee4bf"]
 shader = ExtResource("3_3lcr7")
@@ -13,6 +16,18 @@ shader_parameter/pattern_sampler = ExtResource("4_ofruo")
 shader_parameter/bg_color = Color(0.98039216, 0.9490196, 0.7254902, 1)
 shader_parameter/pattern_color = Color(0.99607843, 0.8784314, 0.5647059, 1)
 shader_parameter/pattern_size = 256.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxgko"]
+size = Vector2(1920, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofruo"]
+size = Vector2(655, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lcr7"]
+size = Vector2(214, 266)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgwxf"]
+size = Vector2(159, 214)
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3
@@ -115,3 +130,53 @@ text = "Sad"
 unique_name_in_owner = true
 layout_mode = 2
 color = Color(1, 1, 1, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(12, 1066)
+collision_layer = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(950, 3)
+shape = SubResource("RectangleShape2D_yxgko")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1648, -112)
+rotation = -0.4207594
+shape = SubResource("RectangleShape2D_ofruo")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(217, 881)
+collision_layer = 3
+collision_mask = 6
+script = ExtResource("7_yxgko")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-4, -9)
+shape = SubResource("RectangleShape2D_3lcr7")
+
+[node name="body2" type="Sprite2D" parent="CharacterBody2D"]
+unique_name_in_owner = true
+position = Vector2(5.9999847, -34)
+scale = Vector2(0.48828125, 0.4921875)
+texture = ExtResource("7_2ose3")
+
+[node name="face" type="Sprite2D" parent="CharacterBody2D/body2"]
+unique_name_in_owner = true
+texture = ExtResource("6_d0dyi")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(1450, 226)
+collision_layer = 2
+collision_mask = 4
+constant_force = Vector2(-12, 0)
+script = ExtResource("9_3lcr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_mgwxf")
+
+[node name="BubblePattern" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(3.8146973e-06, 0)
+scale = Vector2(0.62109375, 0.84375)
+texture = ExtResource("4_ofruo")
