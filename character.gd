@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-
+@export var jump_vel: float = 1200.0
 const SPEED = 300.0
-const JUMP_VELOCITY = -1200.0
+var JUMP_VELOCITY = jump_vel * -1
 
 
 func _physics_process(delta: float) -> void:

@@ -1,7 +1,10 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dff5vdo8oyrxt"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://dff5vdo8oyrxt"]
 
 [ext_resource type="StyleBox" uid="uid://bsetnjcvpimr4" path="res://new_style_box_flat.tres" id="1_ei3wx"]
+[ext_resource type="FontFile" uid="uid://btqpntce35e88" path="res://editundo.ttf" id="1_jktrv"]
 [ext_resource type="FontFile" uid="uid://neiustlwucdv" path="res://edundot.ttf" id="1_ulena"]
+[ext_resource type="FontFile" uid="uid://bgfxnvlq1u6wd" path="res://edunline.ttf" id="3_aaryr"]
+[ext_resource type="FontFile" uid="uid://t8ph42c8fe2x" path="res://JsHandwritten-Regular.otf" id="3_f1362"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ei3wx"]
 content_margin_left = 22.0
@@ -47,7 +50,7 @@ corner_radius_bottom_left = 40
 shadow_size = 5
 anti_aliasing_size = 10.0
 
-[sub_resource type="Image" id="Image_ulena"]
+[sub_resource type="Image" id="Image_jktrv"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
 "format": "RGBA8",
@@ -57,7 +60,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_jktrv"]
-image = SubResource("Image_ulena")
+image = SubResource("Image_jktrv")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1362"]
 content_margin_left = 4.0
@@ -92,9 +95,9 @@ corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
 [resource]
-default_font = ExtResource("1_ulena")
+default_font = ExtResource("3_aaryr")
 default_font_size = 48
-Button/fonts/font = ExtResource("1_ulena")
+Button/fonts/font = ExtResource("1_jktrv")
 Button/styles/disabled = SubResource("StyleBoxFlat_ei3wx")
 Button/styles/focus = SubResource("StyleBoxFlat_ulena")
 Button/styles/hover = SubResource("StyleBoxFlat_ulena")
@@ -121,11 +124,11 @@ RichTextLabel/constants/table_v_separation = 3
 RichTextLabel/constants/text_highlight_h_padding = 3
 RichTextLabel/constants/text_highlight_v_padding = 3
 RichTextLabel/constants/underline_alpha = 50
-RichTextLabel/fonts/bold_font = ExtResource("1_ulena")
-RichTextLabel/fonts/bold_italics_font = ExtResource("1_ulena")
+RichTextLabel/fonts/bold_font = ExtResource("1_jktrv")
+RichTextLabel/fonts/bold_italics_font = ExtResource("3_f1362")
 RichTextLabel/fonts/italics_font = ExtResource("1_ulena")
 RichTextLabel/fonts/mono_font = ExtResource("1_ulena")
-RichTextLabel/fonts/normal_font = ExtResource("1_ulena")
+RichTextLabel/fonts/normal_font = ExtResource("3_aaryr")
 RichTextLabel/icons/horizontal_rule = SubResource("ImageTexture_jktrv")
 RichTextLabel/styles/focus = SubResource("StyleBoxFlat_f1362")
 RichTextLabel/styles/normal = SubResource("StyleBoxFlat_a4fo1")

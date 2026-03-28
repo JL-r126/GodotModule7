@@ -22,29 +22,34 @@ var dict2: Dictionary = {
 
 var dialogue_items: Array[Dictionary] = [
 	{
-		"text": "talk",
+		"text": "[rainbow val=0.9]talking loud[/rainbow]",
 		"expression": dict["regular"],
 		"character": dict2["sophia"]
 	},
 	{
-		"text": "hello world",
+		"text": "[b]hello[/b] world",
 		"expression": dict["happy"],
 		"character": dict2["sophia"]
 	},
 	{
-		"text": "this is code",
+		"text": "[shake]this is code[/shake]",
 		"expression": dict["sad"],
 		"character": dict2["pink"]
 	},
 	{
-		"text": "something else",
+		"text": "[wave]something else[/wave]",
 		"expression": dict["angry"],
 		"character": dict2["sophia"]
 	},
 	{
-		"text": "bye",
+		"text": "[tornado freq=8.0][b]goodbye, farewell![/b][/tornado]",
 		"expression": dict["angry"],
 		"character": dict2["pink"]
+	},
+	{
+		"text": "[b][i]I wrote this myself![/i][/b]",
+		"expression": dict["regular"],
+		"character": dict2["sophia"]
 	},
 ]
 
@@ -63,7 +68,7 @@ func show_text() -> void:
 	char_tween.tween_property(body, "modulate:a", 1.0, 0.2)
 	char_tween.tween_property(body, "position:x", 2.0, 0.3)
 	var tween := create_tween()
-	var text_appearing_duration := rich_text_label.text.length() * 0.08
+	var text_appearing_duration: float = current_item['text'].length() / 30.0
 	tween.tween_property(rich_text_label, "visible_ratio", 1.0, text_appearing_duration)
 	var sound_max_offset := audio_stream_player.stream.get_length() - text_appearing_duration
 	var sound_start_position := randf() * sound_max_offset
