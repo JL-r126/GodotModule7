@@ -11,5 +11,5 @@ func _physics_process(delta: float) -> void:
 	if chare.move_and_slide():
 		for i in chare.get_slide_collision_count():
 			var col = chare.get_slide_collision(i)
-			if col.get_collider() is RigidBody2D:
+			if col.get_collider() is CharacterBody2D:
 				col.get_collider().apply_force(col.get_normal() * -500)

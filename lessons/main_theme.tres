@@ -50,7 +50,7 @@ corner_radius_bottom_left = 40
 shadow_size = 5
 anti_aliasing_size = 10.0
 
-[sub_resource type="Image" id="Image_jktrv"]
+[sub_resource type="Image" id="Image_f1362"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
 "format": "RGBA8",
@@ -60,7 +60,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_jktrv"]
-image = SubResource("Image_jktrv")
+image = SubResource("Image_f1362")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1362"]
 content_margin_left = 4.0
